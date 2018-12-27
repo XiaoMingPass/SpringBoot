@@ -1,0 +1,13 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /SpringBoot
+
+
+################################################## 微信相关 #################################################
+# 微信公众号 token
+wechat:
+  token: EBaseWechat
+  # 微信公众号appid和secret
+  appId: wxb16466619e73c812
+  appSecret: d70ddf158c003b154c64c1ac90ae1644
