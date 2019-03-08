@@ -4,10 +4,24 @@ server:
     context-path: /SpringBoot
 
 
-################################################## ΢����� #################################################
-# ΢�Ź��ں� token
+################################################## 微信配置 ################################################
 wechat:
   token: EBaseWechat
-  # ΢�Ź��ں�appid��secret
   appId: wxb16466619e73c812
   appSecret: d70ddf158c003b154c64c1ac90ae1644
+
+################################################## 数据库配置 ################################################
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sampledb?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# mybatis 下划线转驼峰配置,两者都可以
+#mybatis.configuration.mapUnderscoreToCamelCase=true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #增加打印sql语句，一般用于本地开发测试
