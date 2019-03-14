@@ -1,17 +1,17 @@
 package com.xm.demo.service.impl;
 
 import com.xm.demo.domain.Video;
-import com.xm.demo.mapper.VideoMapper;
-import com.xm.demo.service.VideoService;
+import com.xm.demo.mapper.IVideoMapper;
+import com.xm.demo.service.IVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class VideoServiceImpl implements VideoService {
+public class VideoServiceImpl implements IVideoService {
     @Autowired
-    private VideoMapper videoMapper;
+    private IVideoMapper videoMapper;
 
     @Override
     public List<Video> findAll() {

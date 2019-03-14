@@ -4,7 +4,7 @@ import com.xm.demo.domain.Video;
 
 import java.util.List;
 
-public interface VideoService {
+public interface IVideoService {
     List<Video> findAll();
 
     Video findById(int id);

@@ -1,6 +1,7 @@
 package com.xm.demo.mapper;
 
 import com.xm.demo.domain.Video;
+import com.xm.demo.provider.VideoProvider;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * video数据访问层
  */
-public interface VideoMapper {
+public interface IVideoMapper {
 
     @Select("select * from video")
     /*@Results({ //字段映射，这种写太麻烦，直接加配置文件
@@ -20,7 +21,8 @@ public interface VideoMapper {
     @Select("SELECT * FROM video WHERE id = #{id}")
     Video findById(int id);
 
-    @Update("UPDATE video SET title=#{title} WHERE id =#{id}")
+   // @Update("UPDATE video SET title=#{title},SET summary=#{summary},SET cover_img=#{coverImg},SET view_num=#{viewNum},SET price=#{price},SET create_time=#{createTime},SET online=#{online},SET point=#{point}  WHERE id =#{id}")
+    @UpdateProvider(type=VideoProvider.class,method = "updeteVideo")
     int update(Video Video);
 
     @Delete("DELETE FROM video WHERE id =#{id}")

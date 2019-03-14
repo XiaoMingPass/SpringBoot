@@ -1,7 +1,7 @@
 package com.xm.demo.controller;
 
 import com.xm.demo.config.WeChatConfig;
-import com.xm.demo.mapper.VideoMapper;
+import com.xm.demo.mapper.IVideoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,7 +31,7 @@ public class TestController {
     }
 
     @Autowired
-    private VideoMapper videoMaper;
+    private IVideoMapper videoMaper;
 
     @RequestMapping("testDB")
     public Object testDB() {
